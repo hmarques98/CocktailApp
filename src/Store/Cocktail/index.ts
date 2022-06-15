@@ -1,4 +1,4 @@
-import { userApi } from '@/Services/modules'
+import { cocktailApi } from '@/Services/modules'
 import { CocktailQueryResponse } from '@/Services/modules/cocktail/fetchByName'
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '..'
@@ -10,7 +10,7 @@ const cocktailSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder.addMatcher(
-      userApi.endpoints.fetchByName.matchFulfilled,
+      cocktailApi.endpoints.fetchByName.matchFulfilled,
       (state, { payload }) => {
         return payload
       },

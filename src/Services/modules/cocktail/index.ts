@@ -1,11 +1,11 @@
 import { api } from '@/Services/api'
 import fetchByName from './fetchByName'
 
-export const userApi = api.injectEndpoints({
+export const cocktailApi = api.injectEndpoints({
   endpoints: build => ({
     fetchByName: fetchByName(build),
   }),
   overrideExisting: false,
 })
 
-export const { useLazyFetchByNameQuery } = userApi
+export const { useLazyFetchByNameQuery } = cocktailApi
