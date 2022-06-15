@@ -1,12 +1,23 @@
 export default {
-  welcome: 'Welcome to React Native CocktailApp by TheCodingMachine',
-  actions: {
-    continue: 'Continue',
-  },
-  example: {
-    helloUser: 'I am a fake user, my name is {{name}}',
-    labels: {
-      userId: 'Enter a user id',
+  home: {
+    title: 'Search for your favorite Cocktail recipes',
+    loadingMessage: 'Preparing your drinks...',
+    searchBar: {
+      placeholder: 'Type here your cocktail',
+      button: {
+        label: 'Search',
+      },
     },
+    drinksList: {
+      headerSuccess: 'Found Cocktails',
+      headerEmpty: 'None found. Try another.',
+      headerError: 'Something is wrong. Try again.',
+      totalOfIngredients: 'Total of Ingredients: {{total}}',
+    },
+  },
+
+  recipe: {
+    instructions: 'Instructions',
+    ingredients: 'Ingredients',
   },
 }

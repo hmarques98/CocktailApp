@@ -1,3 +1,3 @@
 export const Config = {
-  API_URL: 'https://jsonplaceholder.typicode.com/',
+  API_URL: 'https://thecocktaildb.com/api/json/v1/1/search.php',
 }

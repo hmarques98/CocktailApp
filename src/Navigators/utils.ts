@@ -9,8 +9,10 @@ import {
   createNavigationContainerRef,
 } from '@react-navigation/native'
 
-type RootStackParamList = {
-  Startup: undefined
+import { CocktailQueryResponse } from '@/Services/modules/cocktail/fetchByName'
+
+export type RootStackParamList = {
+  Recipe: CocktailQueryResponse
   Home: undefined
 }
 

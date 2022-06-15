@@ -1,11 +1,11 @@
 import { api } from '@/Services/api'
-import fetchOne from './fetchOne'
+import fetchByName from './fetchByName'
 
 export const userApi = api.injectEndpoints({
   endpoints: build => ({
-    fetchOne: fetchOne(build),
+    fetchByName: fetchByName(build),
   }),
   overrideExisting: false,
 })
 
-export const { useLazyFetchOneQuery } = userApi
+export const { useLazyFetchByNameQuery } = userApi

@@ -14,9 +14,11 @@ import {
 
 import { api } from '@/Services/api'
 import theme from './Theme'
+import cocktail from './Cocktail'
 
 const reducers = combineReducers({
   theme,
+  cocktail,
   api: api.reducer,
 })
 
@@ -51,3 +53,4 @@ const persistor = persistStore(store)
 setupListeners(store.dispatch)
 
 export { store, persistor }
+export type RootState = ReturnType<typeof persistedReducer>

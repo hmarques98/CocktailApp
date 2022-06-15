@@ -1,33 +1,28 @@
 import React from 'react'
-import { SafeAreaView, StatusBar } from 'react-native'
+import { StatusBar } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
-import { ExampleContainer } from '@/Containers'
+import { HomeContainer, RecipeContainer } from '@/Containers'
 import { useTheme } from '@/Hooks'
-import { navigationRef } from './utils'
+import { navigationRef, RootStackParamList } from './utils'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
-const Stack = createStackNavigator()
+const Stack = createStackNavigator<RootStackParamList>()
 
-// @refresh reset
 const ApplicationNavigator = () => {
-  const { Layout, darkMode, NavigationTheme } = useTheme()
-  const { colors } = NavigationTheme
+  const { darkMode, NavigationTheme } = useTheme()
 
   return (
-    <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
+    <SafeAreaProvider>
       <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
         <StatusBar barStyle={darkMode ? 'light-content' : 'dark-content'} />
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen
-            name="Main"
-            component={ExampleContainer}
-            options={{
-              animationEnabled: false,
-            }}
-          />
+          <Stack.Screen name="Home" component={HomeContainer} />
+
+          <Stack.Screen name="Recipe" component={RecipeContainer} />
         </Stack.Navigator>
       </NavigationContainer>
-    </SafeAreaView>
+    </SafeAreaProvider>
   )
 }
 
